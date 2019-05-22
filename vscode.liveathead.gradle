@@ -1,0 +1,15 @@
+sourceControl {
+    gitRepository("https://github.com/lacasseio/vscode-gradle-plugin.git") {
+        producesModule("io.lacasse.vscode:vscode-gradle-plugin")
+    }
+}
+
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "io.lacasse.vscode") {
+                useModule("io.lacasse.vscode:vscode-gradle-plugin")
+            }
+        }
+    }
+}
